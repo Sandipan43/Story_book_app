@@ -1,0 +1,31 @@
+<h3>Edit story</h3>
+<div class="row">
+    <form action="/stories/edit/{{story._id}}?_method=PUT" method="POST"class="col s12">        
+            <div class="row">
+                <div class="input-field">
+                    <input type="text" id="title" name="title" value="{{story.title}}"/>
+                    <label for="title">Title</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="status" name="status">                        
+                        <option value="" disabled selected>Choose your status</option>
+                        <option value="public">public</option>
+                        <option value="private">private</option>                       
+                    </select>
+                    <label for="status">Status</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <h5>Tell us your story</h5>
+                    <Textarea id="body" name="body" style="height: 150px;">{{story.body}}</Textarea>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="save" class="btn">
+                <a href="/dashbord" class="btn orange">Cancel</a>
+            </div>
+    </form>
+</div>
